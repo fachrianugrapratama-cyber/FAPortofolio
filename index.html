@@ -105,19 +105,20 @@
             <!-- SOCIAL -->
             <div class="social-wrapper">
 
-                <a href="#" class="social-card github">
+                <a href="https://github.com/fachrianugrapratama-cyber" class="social-card github">
                     <i class="fab fa-github"></i>
                     <span>GitHub</span>
                 </a>
 
-                <a href="#" class="social-card instagram">
+                <a href="https://www.instagram.com/fachri_11_pratama7?igsh=YzljYTk1ODg3Zg=="
+                    class="social-card instagram">
                     <i class="fab fa-instagram"></i>
                     <span>Instagram</span>
                 </a>
 
-                <a href="#" class="social-card linkedin">
-                    <i class="fab fa-linkedin"></i>
-                    <span>LinkedIn</span>
+                <a href="https://wa.me/62881026735866" target="_blank" class="social-card whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
                 </a>
 
                 <a href="#" class="social-card discord">
@@ -125,12 +126,12 @@
                     <span>Discord</span>
                 </a>
 
-                <a href="#" class="social-card youtube">
+                <a href="https://youtube.com/@fachripratama-c4o?si=Bj5UUriojofUNEmn" class="social-card youtube">
                     <i class="fab fa-youtube"></i>
                     <span>YouTube</span>
                 </a>
 
-                <a href="#" class="social-card tiktok">
+                <a href="https://www.tiktok.com/@fachriniegenk?_r=1&_t=ZS-96IQhkQqJqZ" class="social-card tiktok">
                     <i class="fab fa-tiktok"></i>
                     <span>TikTok</span>
                 </a>
@@ -470,7 +471,7 @@
 
                     <div>
                         <h4>Email</h4>
-                        <p>fachri@example.com</p>
+                        <p>fachrianugrapratama@gmail.com</p>
                     </div>
 
                 </div>
@@ -481,7 +482,7 @@
 
                     <div>
                         <h4>Phone</h4>
-                        <p>+62 812 3456 7890</p>
+                        <p>62+ 881-0267-35866</p>
                     </div>
 
                 </div>
@@ -492,22 +493,23 @@
 
                     <div>
                         <h4>Location</h4>
-                        <p>Indonesia</p>
+                        <p>Surabaya, Jawa Timur</p>
                     </div>
 
                 </div>
 
             </div>
 
-            <form>
 
-                <input type="text" placeholder="Your Name">
+            <form id="contact-form">
 
-                <input type="email" placeholder="Your Email">
+                <input type="text" name="name" placeholder="Your Name" required>
 
-                <textarea placeholder="Your Message"></textarea>
+                <input type="email" name="email" placeholder="Your Email" required>
 
-                <button class="btn primary">
+                <textarea name="message" placeholder="Your Message" required></textarea>
+
+                <button type="submit" class="btn primary">
                     Send Message
                 </button>
 
@@ -549,7 +551,32 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+    <script>
+        emailjs.init("bOmDSIo11WQsnJX21");
+
+        document
+            .getElementById("contact-form")
+            .addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+                emailjs.sendForm(
+                    "service_kd0lo09",
+                    "template_fjh32xu",
+                    this
+                )
+                    .then(() => {
+                        alert("Message sent successfully!");
+                    })
+                    .catch((error) => {
+                        alert("Failed to send message");
+                        console.log(error);
+                    });
+
+            });
+    </script>
 </body>
 
 </html>
