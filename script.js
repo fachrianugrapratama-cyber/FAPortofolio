@@ -267,4 +267,18 @@ window.addEventListener('scroll', () => {
 
     });
 
+});// PREMIUM MOBILE MENU
+
+const menuToggle =
+    document.getElementById('menuToggle');
+
+const nav =
+    document.querySelector('nav');
+
+menuToggle.addEventListener('click', () => {
+
+    menuToggle.classList.toggle('active');
+
+    nav.classList.toggle('active');
+
 });
